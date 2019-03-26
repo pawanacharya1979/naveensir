@@ -1,0 +1,64 @@
+{% extends 'restate/base.html' %}
+{% block content %}
+<style>
+.card-panel{
+  padding:10px;
+  background-color:black;
+
+  }
+  .mapDiv{
+		  display:flex;
+       flex-flow: row;
+        padding:20px 45px 0 10px;
+		 }
+		 .contact{
+		 padding:30px 0px 0 0px;
+		 }
+</style>
+<div class="col s12 ">
+        <div class="card-panel ">
+          <span class="white-text">
+                <h4><u><i>Would you like to Contact Us! Please fill up the form</i></u></h4>
+          </span>
+        </div>
+</div>
+<p><marquee><font color = "green">Email us with any questions or inquiries or call 9949215264. We would be happy to answer your questions and setup a meeting with you.</font></marquee></p>
+   <div class="contact">
+       <div class = "row">
+       <div class="side col s6">
+       {% if messages %}
+<ul>
+	{% for message in messages %}
+	   <li>{{ message }}</li>
+	{% endfor %}
+</ul>
+	{% endif %}
+        <h5 class="indigo-text"><i>Contact Form</i></h5>
+        <div class="z-depth-1 grey lighten-4 row" style="display: block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+    <form method="post">
+          {% csrf_token %}
+        <table>
+          {{ form.as_p }}
+            </table>
+          <button type="submit">Submit</button>
+
+    </form>
+        </div></div>
+
+
+ <!-- <div class="contact">
+
+
+  </div>-->
+<div class="contact">
+       <div class="side col s3">
+<div class="col-md-3 col-sm-6 wow bounceInUp ContactUs_address_col"><div class="col-md-3 col-sm-6 col-xs-6 ContactUs_add_box"><p>Corporate Head Quarters</p><div class="textwidget">Manuroop &amp; Technologies, Inc<br> 42807 Freedom st, Chantily, VA 20152<br> Phone: +1 248-327-3541<br> Fax: 248-928-0344<br> Email:<a href="mailto:pawanacharya1979@gmail.com" target="_top">pawancahray1979@gmail.com</a></div></div>
+</div></div>
+            <div class="side col s3">
+           <div class="col-md-3 col-sm-6 col-xs-6 ContactUs_add_box"><p>Manuroop Technologies Pvt Ltd</p><div class="textwidget">Plot no:35 flat number 304, saptagiri colony Kukatpally, Hyderabad – 500072<br> Ph : 8712556518 / 8712556519<br> Mobile : +91 9963100991<br> Email:<a href="mailto:pawanacharya1979@gmail.com" target="_top">pawanacharya1979@gmail.com</a></div></div>
+            </div></div>
+ <div class="mapDiv">
+		   <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1206.4757963005231!2d-0.154311!3d52.787181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe767bf79d377b61f!2sGurkha+Oven!5e0!3m2!1sen!2sin!4v1530010963618" width="900" height="570" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+ <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15228.793452979293!2d78.548992!3d17.4022656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1551365983318" width="900" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
+ </div></div></div>
+{% endblock %}
