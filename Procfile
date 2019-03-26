@@ -1,2 +1,2 @@
-web: gunicorn estate.wsgi
+web: gunicorn estate.wsgi --log-file -
 
