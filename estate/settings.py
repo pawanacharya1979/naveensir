@@ -25,7 +25,7 @@ SECRET_KEY = 'cvnsiv%&@dctrqswj7epfv#45pe_47$h%lc9wp2u=&+&amy+h^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [‘0.0.0.0’, ‘localhost’, 'https://naveenrealestate.herokuapp.com/']
 
 
 # Application definition
