@@ -27,6 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'naveenrealestate.herokuapp.com']
 
+########## EMAIL CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
+########## END EMAIL CONFIGURATION
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Estate <noreply@example.com>'
+
 
 # Application definition
 
