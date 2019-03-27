@@ -1,11 +1,202 @@
 {% extends 'restate/base.html' %}
 {% block content %}
 <style>
+.costumer-satis{
+                height:400px;
+                display:grid;
+                {% load static %}
+                background-image: url("{% static "images/house.png" %}");
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+
+              }
+.cs-texts h2{
+
+              padding-top:100px;
+              color: whitesmoke;
+              font-style:italic;
+            }
+
+.search-close-icon{
+  display: none!important;
+  position: absolute;
+  top: 0;
+  left: 100%!important;
+  padding-left: 0px;
+  color: rgba(0, 0, 0, 0.54);
+  transition: color .2s;
+  cursor: pointer;
+}
+
+.col img {
+
+width:550px;
+
+}
+
+input.search-field {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.54);
+  border-radius: 2px;
+  border: 0;
+  border-radius: 5px;
+  height: 36px;
+  padding: 8px 8px 8px 60px;
+  width: 500px;
+  background: #f7f7f7;
+  transition: background 0.2s, width .2s;
+}
+input.search-field:hover {
+  background: #ebebeb;
+}
+.searchbox {
+  position: relative;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(0, 0, 0, 0.54);
+}
+input.search-field:focus {
+  outline: none;
+  width: 1000px;
+  color: #212121;
+}
+input.search-field:focus:hover {
+  background: #f7f7f7;
+}
+.search-icon {
+  position: absolute;
+  top: 0;
+  padding-left: 20px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.search-content {
+  color: #303c42;
+  width: 90%;
+  margin: auto;
+  height: auto;
+  padding: 8px 10px;
+}
+.search-heading {
+  color: #757575;
+  display: block;
+  font-size: 12px;
+  line-height: 30px;
+}
+input.search-field ~ .search-popup {
+  overflow: hidden;
+  left: 0px;
+  min-height: 50px;
+  max-height: 700px;
+  width: 200px;
+  top: -450px;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: width .2s, top .2s ease-in-out;
+  border-radius: 2px;
+  background-color: #fff;
+}
+input.search-field:focus ~ .search-popup {
+  width: 500px;
+  top: 50px;
+}
+
+nav ul.popup-list li a:hover {
+  background-color: #f7f7f7;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: transparent;
+  }
+
+  input.search-field {
+    width: 1px;
+    margin-right: 0px;
+    padding: 8px 25px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  input.search-field ~ .search-popup {
+    width: 1px;
+    margin-right: 0px;
+    padding: 8px 25px;
+  }
+
+  .search-icon {
+    top: 0;
+    padding-left: 15px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  input.search-field:focus {
+    margin-right: 0px;
+    width: 100vw;
+    padding: 8px 8px 8px 50px;
+  }
+
+  input.search-field:focus ~ .search-popup {
+    width: 100vw;
+  }
+
+  .search-content {
+    width: 100%;
+    padding: 8px 8px;
+  }
+
+}
 
 
     </style>
-{% load static %}
-<img src="{% static "images/banner.png" %}" alt="Housing Image" width=100% height=400px/>
+ <div class="costumer-satis">
+    <center> <div class="cs-texts"><h2> Discover a place<br>
+      you’ll love to live</h2>
+    </div>
+
+      <form action="" >
+  <input id="search-input" placeholder="Search" type="text" class="browser-default search-field" name="q" value="" autocomplete="off" aria-label="Search box">
+        <label for="search-input"><i class="material-icons search-icon">search</i></label>
+        <i class="material-icons search-close-icon">cancel</i>
+
+      </form></center>
+ </div>
+<div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s6">
+                {% load static %}
+              <img src="{% static "images/side.jpg" %}" alt="" > <!-- notice the "circle" class -->
+            </div>
+            <div class="col s6">
+                <h3 style="color:blue;">Direct Estae Listing</h3>
+              <span class="black-text">
+                  Search MLS listings directly on your local Coldwell Banker® office<br> website to find the most up-to-date homes for sale. Sign up for an<br> account to be matched to a local Coldwell Banker® agent in your<br> area, be the first to know about new MLS listings with email<br> notifications, and customize your MLS search
+              </span> </div>
+          </div>
+        </div>
+      </div>
+<div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+
+            <div class="col s6">
+                <h3 style="color:blue;"> Find a local Coldwell Banker® Real Estate Agent</h3>
+              <span class="black-text">
+Work with a local Coldwell Banker® Real Estate agent who can help<br> find the right real estate listing for you. Coldwell Banker® agents<br> and brokers are knowledgeable about the local real estate market,<br> and ready to help with your real estate search.        </div>
+               <div class="col s6">
+                {% load static %}
+              <img src="{% static "images/side2.jpg" %}" alt="" > <!-- notice the "circle" class -->
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 {% endblock %}
