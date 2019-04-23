@@ -113,12 +113,13 @@ nav ul.popup-list li a:hover {
 
 
   ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: transparent;
+    /* Chrome, Firefox, Opera, Safari 10.1+
+    color: transparent;*/
+     color: rgba(0, 0, 0, 0.54);
   }
 
   input.search-field {
-    width: 1px;
+    width: 300px;
     margin-right: 0px;
     padding: 8px 25px;
     border-bottom-right-radius: 0;
@@ -152,7 +153,19 @@ nav ul.popup-list li a:hover {
   }
 
 }
-
+  @media only screen and (max-device-width: 480px) {
+.row .col.s6 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+  }
+ @media only screen and (max-device-width: 1024px) {
+.col img {
+    width: 350px;
+}
+}
 
     </style>
  <div class="costumer-satis">
@@ -169,7 +182,7 @@ nav ul.popup-list li a:hover {
  </div>
 <div class="col s12 m8 offset-m2 l6 offset-l3">
         <div class="card-panel grey lighten-5 z-depth-1">
-          <div class="row valign-wrapper">
+          <div class="row halign-wrapper">
             <div class="col s6">
                 {% load static %}
               <img src="{% static "images/side.jpg" %}" alt="" > <!-- notice the "circle" class -->
@@ -184,7 +197,7 @@ nav ul.popup-list li a:hover {
       </div>
 <div class="col s12 m8 offset-m2 l6 offset-l3">
         <div class="card-panel grey lighten-5 z-depth-1">
-          <div class="row valign-wrapper">
+          <div class="row halign-wrapper">
 
             <div class="col s6">
                 <h3 style="color:blue;"> Find a local Estate Banker® Real Estate Agent</h3>

@@ -42,9 +42,21 @@ html,body{
           background-color:brown !important;
 
         }
+ .side-nav li a{
+color:green !important;
+        }
+        .side-nav li:hover{
+          background-color: tomato;
+         }
 
-
-
+ul#mobile-demo.side-nav{
+    padding-top:50px;
+    }
+img#logo.responsive-img, video.responsive-video {
+    max-width: 100%;
+    height: 100%;
+    margin-left:30px;
+}
 
 .title{
       font-size:13px;
@@ -74,9 +86,7 @@ img#logo.responsive-img, video.responsive-video {
  padding-bottom: 50px; /* height of your footer */
 }
 
-        .side-nav li a{
-color:lightblue !important;
-        }
+
 .page-footer{
   position: absolute;
   bottom: 0;
@@ -105,6 +115,10 @@ color:lightblue !important;
   padding:0px !important;
   font-size: 11px;
 }
+.side-nav{
+           background-color: whitesmoke;
+           opacity: 1;
+        }
 .nav-content li a{
   padding:0px !important;
   font-size: 11px;
@@ -112,9 +126,38 @@ color:lightblue !important;
 
         }
       }
+ @media only screen and (max-device-width: 480px) {
+       /* styles for mobile browsers smaller than 480px;  */
+       img#logo.responsive-img, video.responsive-video {
+    max-width: 100%;
+    height:47px;
+    margin-left: 0px;
+}
 
+.navbar-text-mobile{
+display:inline;
+}
+    }
    @media screen and (min-width:800px) {
 
+}
+ @media only screen and (device-width: 768px) {
+       /* default iPad screens */
+        img#logo.responsive-img, video.responsive-video {
+    max-width: 100%;
+    height: 89%;
+    margin-left: 0px;
+    }
+
+    }
+    /* different techniques for iPad screening */
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1023px) and (orientation:portrait) {
+      /* For portrait layouts only */
+      img#logo.responsive-img, video.responsive-video {
+    max-width: 100%;
+    height: 89%;
+    margin-left: 0px;
+}
 }
       </style>
 
@@ -131,15 +174,19 @@ color:lightblue !important;
         <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
              <li><a href="{% url 'home' %}">Home</a></li>
-             <li><a href="{% url 'about' %}">About Us</a></li>
-             <li ><a href="{% url 'contactus' %}">Contact Us</a></li>
+             <li><a href="{% url 'project' %}">Projects</a></li>
+             <li><a href="{% url 'aboutestate' %}">About Us</a></li>
+             <li ><a href="{% url 'nricorner' %}">NRI Corner</a></li>
+             <li ><a href="{% url 'contactus' %}">Contact</a></li>
 
         </ul>
         <ul class="side-nav" id="mobile-demo">
 
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li ><a href="{% url 'contactus' %}">Contact</a></li>
+           <li><a href="{% url 'home' %}">Home</a></li>
+             <li><a href="{% url 'project' %}">Projects</a></li>
+             <li><a href="{% url 'aboutestate' %}">About Us</a></li>
+             <li ><a href="{% url 'nricorner' %}">NRI Corner</a></li>
+             <li ><a href="{% url 'contactus' %}">Contact</a></li>
 
 
 
@@ -180,6 +227,19 @@ color:lightblue !important;
 
 $(document).ready(function() {
     $('select').material_select();
+  });
+
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
+   $(document).ready(function () {
+        $(".button-collapse").sideNav();
+         $('.button-collapse').click(removeOverlay);
+        closeOnClick: true
+      });
+function removeOverlay() {
+  $('div[id^=sidenav-overlay]').remove();
+}
 
  </script>
 </html>
